@@ -6,7 +6,7 @@ class CoinFlipper extends Component {
   static defaultProps = {
     coins: [
       { side: "heads", imgSrc: "https://tinyurl.com/react-coin-heads-jpg" },
-      { side: "tails", imgSrc: "https://tinyurl.com/react-coin-tails-jpg" },
+      { side: "tails", imgSrc: "https://tinyurl.com/react-coin-tails-png" },
     ],
   };
   constructor(props) {
@@ -38,7 +38,7 @@ class CoinFlipper extends Component {
     return (
       <div className="CoinFlipper">
         <h1>Coin Flip</h1>
-        <Coin data={this.state.coin} />
+        {this.state.coin && <Coin data={this.state.coin} />}
         <button onClick={this.handleClick}>Flip</button>
         <p>
           Out Of {this.state.nFlips} Flips, you got {this.state.nHeads} Heads &{" "}
