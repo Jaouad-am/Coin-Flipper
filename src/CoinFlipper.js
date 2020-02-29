@@ -20,6 +20,7 @@ class CoinFlipper extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   flip() {
+    //getting a random coin
     const randCoin = choice(this.props.coins);
     //console.log(randCoin);
     this.setState((st) => {
@@ -38,6 +39,7 @@ class CoinFlipper extends Component {
     return (
       <div className="CoinFlipper">
         <h1>Coin Flip</h1>
+        {/* check if the state.coin is not null then send props to Coin Component */}
         {this.state.coin && <Coin data={this.state.coin} />}
         <button onClick={this.handleClick}>Flip</button>
         <p>
